@@ -58,6 +58,20 @@ class MainActivity : AppCompatActivity() {
         refreshdata()
     }
 
+    public fun btnHapus (v : View)
+    {
+        id =  etID.text.toString()
+        name = etName.text.toString()
+        HttpAsyncTaskPost().execute("http://team67app.000webhostapp.com/hapus.php?id=$id&name=$name")
+    }
+
+    public fun btnUpdate(v : View)
+    {
+        id =  etID.text.toString()
+        name = etName.text.toString()
+        HttpAsyncTaskPost().execute("http://team67app.000webhostapp.com/update.php?id=$id&name=$name")
+    }
+
     fun showMessage(title: String, Message: String) {
         val builder = AlertDialog.Builder(this)
         builder.setCancelable(true)
